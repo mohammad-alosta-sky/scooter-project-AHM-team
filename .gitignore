@@ -3,5 +3,5 @@ node_modules/
 .vscode
 .idea
 .env
-package-lock.json
 coverage
+package-lock.json
