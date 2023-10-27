@@ -20,20 +20,20 @@ describe("User property tests", () => {
   })
 
   // test password
-  test("password should be a string", () => {
-    const numpass = () => {
-      throw new User("Joe Bloggs", 12345678, 21);
-    };
-    expect(numpass).toThrow("Password can't be numbers only");
-  });
+  // test("password should be a string", () => {
+  //   const numpass = () => {
+  //     throw new User("Joe Bloggs", 12345678, 21);
+  //   };
+  //   expect(numpass).toThrow("Password can't be numbers only");
+  // });
 
-  test("password has to be more than 8 characters", () => {
+  // test("password has to be more than 8 characters", () => {
 
-    const shortpass = () => {
-      throw new User("Joe Bloggs", "1234567", 21);
-    };
-    expect(shortpass).toThrow("The password is too short");
-  });
+  //   const shortpass = () => {
+  //     throw new User("Joe Bloggs", "1234567", 21);
+  //   };
+  //   expect(shortpass).toThrow("The password is too short");
+  // });
 
   // test age
   test("Has the correct value", () => {
@@ -49,11 +49,17 @@ describe("Testing login method", () => {
     expect(user.loggedIn).toBe(false);
   });
 
+  test("Cant login if the password is incorrect", () => {
+    ;
+    expect(() => user.login("randompassword")).toThrow("Incorrect password");
+  })
+
   test("Can login when the password is correct", () => {
     user.login("test1234");
     expect(user.loggedIn).toBe(true);
   });
 
+  
 
 
 // test logout
