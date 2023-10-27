@@ -1,5 +1,5 @@
 const User = require('../src/User');
-import {describe, expect, it} from "@jest/globals"
+//import {describe, expect, it} from "@jest/globals"
 
 
 const user = new User("Joe Bloggs", "test1234", 21);
@@ -49,7 +49,20 @@ describe("Testing login method", () => {
     expect(user.loggedIn).toBe(false);
   });
 
-  test("Can login when the password is correct")
-})
+  test("Can login when the password is correct", () => {
+    user.login("test1234");
+    expect(user.loggedIn).toBe(true);
+  });
+
+
 
 // test logout
+
+  test("user can logout", () => {
+    user.logout();
+    expect(user.loggedIn).toBe(false);
+
+  })
+
+});
+
