@@ -1,6 +1,6 @@
 class User {
   #password;
-  //loggedIn;
+  //#loggedIn;
   // User code here
   constructor(username, password, age){
     this.username = username;

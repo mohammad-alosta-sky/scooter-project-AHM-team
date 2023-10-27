@@ -7,10 +7,13 @@ const scooterApp = new ScooterApp();
 
 // register user
 describe("registerUser method tests", () => {
-  test("Should return instance of User", () => {
-    let response = scooterApp.registerUser("Joe Bloggs", "test123", 21);
+  it("should register a new user", () => {
+    const user = scooterApp.registerUser("JoeBloggs", "test123", 21);
     expect(response).toBeInstanceOf(User);
+    expect(scooterApp.registeredUser["JoeBloggs"].toBe(user));
+
   });
+  it("should ")
 });
 
 // log in
